@@ -48,9 +48,8 @@ ENV container docker
 # we can has SSH
 EXPOSE 22
 
+
+# prepare for takeoff
 COPY sshd.service /etc/systemd/system/
 RUN chmod 664 /etc/systemd/system/sshd.service
 RUN systemctl enable sshd.service
-
-# prepare for takeoff
-CMD ["/sbin/systemd"]
